@@ -294,7 +294,7 @@ public class OnePlayersKeyMed implements GLEventListener, KeyListener {
             pla.clip.start();
             JOptionPane.showMessageDialog(null, " Good Job " + name + " :O");
         }
-        if (scoreplayer2 >= 2) {
+        if (scoreplayer2 >= 5) {
             scoreplayer2 = 0;
             scoreplayer1 = 0;
             new Lost().setVisible(true);
@@ -303,7 +303,7 @@ public class OnePlayersKeyMed implements GLEventListener, KeyListener {
             pla.clip.start();
             JOptionPane.showMessageDialog(null, " Loser " + name + " ;D");
 
-        } else if (scoreplayer1 >= 2) {
+        } else if (scoreplayer1 >= 5) {
 
             scoreplayer2 = 0;
             scoreplayer1 = 0;

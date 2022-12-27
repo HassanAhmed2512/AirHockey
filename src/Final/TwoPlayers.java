@@ -404,25 +404,25 @@ public class TwoPlayers implements GLEventListener, KeyListener {
     public void handleKeyPress() {
 
         if (isKeyPressed(VK_LEFT)) {
-            if (XforPlayer1 > -maxWidth + 10) {
+            if (XforPlayer1 > -maxWidth + 25) {
                 XforPlayer1--;
             }
         }
 
         if (isKeyPressed(VK_RIGHT)) {
-            if (XforPlayer1 < maxWidth - 10) {
+            if (XforPlayer1 < maxWidth - 25) {
                 XforPlayer1++;
             }
         }
 
         if (isKeyPressed(VK_DOWN)) {
-            if (YforPlayer1 > -maxHeight / 4 - 50) {
+            if (YforPlayer1 > -(maxHeight / 4 )- 60) {
                 YforPlayer1--;
             }
         }
 
         if (isKeyPressed(VK_UP)) {
-            if (YforPlayer1 < maxHeight / 4 - 30) {
+            if (YforPlayer1 < (maxHeight / 4) - 30) {
                 YforPlayer1++;
             }
         }
@@ -446,25 +446,25 @@ public class TwoPlayers implements GLEventListener, KeyListener {
         }
 //////////////////////////////////////////////////////////
         if (isKeyPressed(VK_A)) {
-            if (XforPlayer2 > -maxWidth + 10) {
+            if (XforPlayer2 > -maxWidth + 25) {
                 XforPlayer2--;
             }
         }
 
         if (isKeyPressed(VK_D)) {
-            if (XforPlayer2 < maxWidth - 10) {
+            if (XforPlayer2 < maxWidth - 25) {
                 XforPlayer2++;
             }
         }
 
         if (isKeyPressed(VK_S)) {
-            if (YforPlayer2 > maxHeight / 4 - 20) {
+            if (YforPlayer2 > (maxHeight / 4) - 11) {
                 YforPlayer2--;
             }
         }
 
         if (isKeyPressed(VK_W)) {
-            if (YforPlayer2 < maxHeight - 20) {
+            if (YforPlayer2 < maxHeight - 15) {
                 YforPlayer2++;
             }
         }
