@@ -193,12 +193,12 @@ public class OnePlayersMouseHard implements GLEventListener, MouseMotionListener
             } else if (movingUp && !movingRight) {
                 movingRight = true;
                 movingUp = false;
-            } else if (!movingUp && movingRight) {
-                movingUp = true;
-                movingRight = false;
-            } else if (!movingUp && !movingRight) {
-                movingRight = true;
-                movingUp = false;
+//            } else if (!movingUp && movingRight) {
+//                movingUp = true;
+//                movingRight = false;
+//            } else if (!movingUp && !movingRight) {
+//                movingRight = true;
+//                movingUp = false;
             }
         }
 ///////// the movement For the ball

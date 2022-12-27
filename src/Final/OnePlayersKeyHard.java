@@ -130,7 +130,7 @@ public class OnePlayersKeyHard implements GLEventListener, KeyListener {
         if (XforPlayer2 < Xball ) {
             XforPlayer2++;
         }
-        if (Yball >= 25 && YforPlayer2 >= Yball && YforPlayer2 > 40) {
+        if (Yball >= 0 && YforPlayer2 >= Yball && YforPlayer2 > 20) {
             YforPlayer2--;
         }
         if (Yball <= 0 && YforPlayer2 < 90) {
@@ -190,12 +190,13 @@ public class OnePlayersKeyHard implements GLEventListener, KeyListener {
             } else if (movingUp && !movingRight) {
                 movingRight = true;
                 movingUp = false;
-            } else if (!movingUp && movingRight) {
-                movingUp = true;
-                movingRight = false;
-            } else if (!movingUp && !movingRight) {
-                movingRight = true;
-                movingUp = false;
+//            } else if (!movingUp && movingRight) {
+//                movingUp = true;
+//                movingRight = false;
+//            } else if (!movingUp && !movingRight) {
+//                movingRight = true;
+//                movingUp = false;
+//            }
             }
         }
 ///////// the movement For the ball
