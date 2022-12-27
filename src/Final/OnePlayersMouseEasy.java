@@ -149,8 +149,8 @@ public class OnePlayersMouseEasy implements GLEventListener, MouseMotionListener
 
         ///// player 1
         if ((int) Math.sqrt(Math.pow(Xball - XforPlayer1, 2) + Math.pow(Yball - YforPlayer1, 2)) <= 15) {
-//            X0ball = XforPlayer1;
-//            Y0ball = YforPlayer1;
+            X0ball = XforPlayer1;
+            Y0ball = YforPlayer1;
             play = true;
             verticle = (Xball - XforPlayer1 == 0);
             if (verticle) {
@@ -296,7 +296,7 @@ public class OnePlayersMouseEasy implements GLEventListener, MouseMotionListener
             pla.clip.start();
             JOptionPane.showMessageDialog(null, " Good Job " + name + " :O");
         }
-        if (scoreplayer2 >= 2) {
+        if (scoreplayer2 >= 3) {
             scoreplayer2 = 0;
             scoreplayer1 = 0;
             new Lost().setVisible(true);
@@ -305,7 +305,7 @@ public class OnePlayersMouseEasy implements GLEventListener, MouseMotionListener
             pla.clip.start();
             JOptionPane.showMessageDialog(null, " Loser " + name + " ;D");
 
-        } else if (scoreplayer1 >= 2) {
+        } else if (scoreplayer1 >= 3) {
 
             scoreplayer2 = 0;
             scoreplayer1 = 0;

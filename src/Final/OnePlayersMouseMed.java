@@ -15,7 +15,7 @@ public class OnePlayersMouseMed implements GLEventListener, MouseMotionListener,
 
     GLUT g = new GLUT();
     String name = (String) JOptionPane.showInputDialog(null, "Enter Name", "Player 1");
-
+    long Timer = 3600;
     boolean moveRight = true;
     int UP = 0;
     int DOWN = 180;
@@ -98,6 +98,8 @@ public class OnePlayersMouseMed implements GLEventListener, MouseMotionListener,
         //////////////The win method Drow The Ball and check if it go to the 
         win(gl);
 ///////////////Here To show the Score ////
+        gl.glRasterPos2i(-79, 0);
+        g.glutBitmapString(8, Integer.toString((int) (Timer--)/60));
         gl.glRasterPos2i(-79, 90);
         g.glutBitmapString(5, "Computer");
         gl.glRasterPos2i(-79, 80);
@@ -268,49 +270,55 @@ public class OnePlayersMouseMed implements GLEventListener, MouseMotionListener,
 
     public void win(GL gl) {
         ///////////Bound For First Goal////////////
-        if ((Xball > -30 && Xball < 30) && Yball <= -90 && play) {
+                if ((Xball > -30 && Xball < 30) && Yball <= -90) {
             reset();
-            scoreplayer2 = f1.getScore();
             scoreplayer2++;
-            f1.setScore(scoreplayer2);
         }
         ///////////Bound For Second Goal////////////
-        if ((Xball > -30 && Xball < 30) && Yball >= 90 && play) {
+        if ((Xball > -30 && Xball < 30) && Yball >= 90) {
             reset();
-            scoreplayer1 = s2.getScore();
-
             scoreplayer1++;
-            s2.setScore(scoreplayer1);
         }
 
         /////////////////// The Final Score for Each one ///////
-        if (f1.getScore() >= 10) {
-            paused = true;
-            started = false;
-            ended = true;
-            f1.setScore(0);
-            s2.setScore(0);
-
+        if (Timer == 0 && scoreplayer2 >= scoreplayer1) {
+            scoreplayer2 = 0;
+            scoreplayer1 = 0;
+            new Lost().setVisible(true);
+            String filepath = "src\\Audio\\challenge-lose-By-Tuna.wav";
+            playMusic(filepath);
+            pla.clip.start();
+            JOptionPane.showMessageDialog(null, " Loser " + name + " ;D");
+        }
+        if (Timer == 0 && scoreplayer2 < scoreplayer1) {
+            scoreplayer2 = 0;
+            scoreplayer1 = 0;
+            new win().setVisible(true);
+            String filepath = "src\\Audio\\win-By-Tuna.wav";
+            playMusic(filepath);
+            pla.clip.start();
+            JOptionPane.showMessageDialog(null, " Good Job " + name + " :O");
+        }
+        if (scoreplayer2 >= 5) {
+            scoreplayer2 = 0;
+            scoreplayer1 = 0;
             new Lost().setVisible(true);
             String filepath = "src\\Audio\\challenge-lose-By-Tuna.wav";
             playMusic(filepath);
             pla.clip.start();
             JOptionPane.showMessageDialog(null, " Loser " + name + " ;D");
 
-        } else if (s2.getScore() >= 10) {
-            paused = true;
-            ended = true;
-            started = false;
-            f1.setScore(0);
-            s2.setScore(0);
+        } else if (scoreplayer1 >= 5) {
+
+            scoreplayer2 = 0;
+            scoreplayer1 = 0;
+
             new win().setVisible(true);
             String filepath = "src\\Audio\\win-By-Tuna.wav";
             playMusic(filepath);
             pla.clip.start();
             JOptionPane.showMessageDialog(null, " Good Job " + name + " :O");
 
-        } else {
-            ended = false;
         }
 
         drawball(gl);

@@ -146,8 +146,8 @@ public class OnePlayersKeyHard implements GLEventListener, KeyListener {
 
         ///// player 1
         if ((int) Math.sqrt(Math.pow(Xball - XforPlayer1, 2) + Math.pow(Yball - YforPlayer1, 2)) <= 15) {
-            //  X0ball = XforPlayer1;
-            //      Y0ball = YforPlayer1;
+            X0ball = XforPlayer1;
+            Y0ball = YforPlayer1;
             play = true;
             verticle = (Xball - XforPlayer1 == 0);
             if (verticle) {

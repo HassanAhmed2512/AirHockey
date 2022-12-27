@@ -169,8 +169,8 @@ public class TwoPlayers implements GLEventListener, KeyListener {
         }
 ///// second player2
         if ((int) Math.sqrt(Math.pow(Xball - XforPlayer2, 2) + Math.pow(Yball - YforPlayer2, 2)) <= 10) {
-//            X0ball = XforPlayer2;
-//            Y0ball = YforPlayer2;
+            X0ball = XforPlayer2;
+            Y0ball = YforPlayer2;
             play = true;
             verticle = (Xball - XforPlayer2 == 0);
             if (verticle) {
@@ -298,7 +298,7 @@ public class TwoPlayers implements GLEventListener, KeyListener {
             pla.clip.start();
             JOptionPane.showMessageDialog(null, " Good Job " + name1 + " :O");
         }
-        if (scoreplayer2 >= 2) {
+        if (scoreplayer2 >= 5) {
             scoreplayer2 = 0;
             scoreplayer1 = 0;
             new Lost().setVisible(true);
@@ -307,7 +307,7 @@ public class TwoPlayers implements GLEventListener, KeyListener {
             pla.clip.start();
             JOptionPane.showMessageDialog(null, " Loser " + name1 + " ;D");
 
-        } else if (scoreplayer1 >= 2) {
+        } else if (scoreplayer1 >= 5) {
 
             scoreplayer2 = 0;
             scoreplayer1 = 0;
