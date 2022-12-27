@@ -44,7 +44,7 @@ public class TwoPlayers implements GLEventListener, KeyListener {
     long Timer = 3600;
     
     float X0ball = 0;         //x0 axis
-    float Y0ball = 0;        //y0 axis
+    float Y0ball = 5;        //y0 axis
     float slope = 0;    // slpe betwen ball and playr
     float Xball = X0ball;       //holds the new 'Xball' position of ball
     float Yball = Y0ball;     //holds the new 'Yball' position
@@ -331,7 +331,7 @@ public class TwoPlayers implements GLEventListener, KeyListener {
         XforPlayer2 = 0;
         YforPlayer2 = 80;
         X0ball = 0;
-        Y0ball = 0;
+        Y0ball = 5;
         slope = 0;
         Xball = X0ball;
         Yball = Y0ball;
